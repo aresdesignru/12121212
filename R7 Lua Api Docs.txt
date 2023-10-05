@@ -1,0 +1,1187 @@
+Globals 
+ 
+general 
+< void >  create_debug_window 
+< void >  remove_debug_window 
+< void >  clear_debug_window 
+< int >  get_debug_window_line_count  - cant insert more text after 100 lines. 
+< void >  log  < std::string text > 
+< void >  log_notify  < std::string text > 
+< void >  log_to_console  < std::string text > 
+< void >  log_to_console_colored  < std::string text, float red, float green, float blue, float alpha > 
+< float >  ticks_to_time  < int ticks > 
+< int >  time_to_ticks  < float time > 
+< convar* >  get_convar  < std::string var > 
+< c_color >  get_smooth_colors 
+< bool >  is_active_app 
+< bool >  is_chat_open 
+< bool >  is_in_thirdperson 
+< float >  get_lerp 
+< void >  play_sound  < sounds sound, float volume > 
+< void >  play_custom_sound  < std::string sound_file, float volume > 
+< bool >  is_key_pressed  < int button > 
+< bool >  is_key_active  < int button, int mode > 
+< void >  override_clantag  < std::string clantag > 
+< void >  set_mouse_cursor_visible  < bool visible > 
+< c_vector2d >  get_mouse_cursor_position 
+< void >  force_mouse_cursor  < bool force > 
+< void >  disable_keyboard_inputs  < bool disable > 
+< void* >  create_interface  < std::string module_name, std::string interface > - DONT INCLUDE THE NUMBER AT THE END OF THE INTERFACE 
+ 
+menu 
+< bool >  is_visible 
+< c_vector2d >  get_menu_pos 
+< c_vector2d >  get_menu_size 
+< int >  get_uid 
+< std::string >  get_username 
+< cfg_item* >  get  < std::string name > 
+< config_type >  get_config_type  < cfg_item item > 
+< cfg_text* >  add_text  < std::string name, std::string flex_name, optional < std::string override_text >, optional < std::string description > > 
+< cfg_checkbox* >  add_checkbox  < std::string name, bool default_value, optional < std::string flexname >, optional < std::string description > > 
+< cfg_slider* >  add_slider  < std::string text, float default_value, float min, float max, optional < std::string format >, optional < std::string flexname >, optional < std::string description > > 
+< cfg_combo* >  add_combo  < std::string text, int default_value, std::string items, optional < std::string flexname >, optional < std::string description > > 
+< cfg_multiselect* >  add_multiselection < std::string text, std::string items, optional < std::string flexname >, optional < std::string description > > 
+< cfg_keybind* >  add_keybind  < std::string text, int default_button, int mode, int keybind_options, optional < std::string flexname >, optional < std::string description > > 
+< cfg_colorpicker* >  add_colorpicker  < std::string text, float default_r, float default_g, float default_b, float default_a, bool alpha, optional < std::string flexname >, optional < std::string description > > 
+< cfg_textinput* >  add_textinput_box < optional < std::string default_text >, optional < std::string hint_text >, optional < std::string flexname >, optional < std::string description > > 
+< cfg_button* >  add_button < std::string name, optional < std::string hovered_text >, optional < std::string pressed_text >, optional < std::string flexname >, optional < std::string description > > 
+ 
+esp_info 
+< esp_player_info >  get_esp_info  < int index > 
+< c_vector4d >  get_dynamic_box  < c_client_entity* entity > 
+< c_vector3d >  get_hitbox_position  < int index, hitbox hitbox > 
+< c_vector3d >  get_shoot_position  < int index > 
+ 
+player_resource 
+< c_client_entity* >  get_entity 
+< float >  get_netvar_float  < int index, std::string name > 
+< int >  get_netvar_int  < int index, std::string name > 
+< bool >  get_netvar_bool  < int index, std::string name > 
+< std::string >  get_netvar_string  < int index, std::string name > 
+< c_vector3d >  get_a_spot_position 
+< c_vector3d >  get_b_spot_position 
+ 
+filesystem 
+< std::string >  get_lua_path 
+< void >  write_to_file  < std::string filename, std::string data, bool append > 
+< std::string >  read_from_file  < std::string filename > 
+ 
+engine_game_trace 
+< game_trace* >  get_line  < float start_x, float start_y, float start_z, float end_x, float end_y, float end_z, trace_mask mask, c_client_entity* ignore > 
+< game_trace* >  get_hull  < float start_x, float start_y, float start_z, float end_x, float end_y, float end_z, float mins_x, float mins_y, float mins_z, float maxs_x, float maxs_y, float maxs_z, trace_mask mask, c_client_entity* ignore > 
+< autowall >  autowall_trace  < c_cs_player* enemy, float hitpoint_x, float hitpoint_y, float hitpoint_z, int hitbox > 
+< bool >  can_hit_hitbox  < c_cs_player* shooter, c_cs_player* victim, float end_x, float end_y, float end_z, int hitbox > 
+ 
+debug_overlay 
+< void >  add_box_overlay  < float org_x, float org_y, float org_z, float mins_x, float mins_y, float mins_z, float maxs_x, float maxs_y, float maxs_z, float angle_x, float angle_y, float angle_z, float red, float green, float blue, float alpha, float duration > 
+< void >  add_sphere_overlay  < float org_x, float org_y, float org_z, float radius, float theta, float phi, float red, float green, float blue, float alpha, float duration > 
+< void >  add_triangle_overlay  < float p1_x, float p1_y, float p1_z, float p2_x, float p2_y, float p2_z, float p3_x, float p3_y, float p3_z, float red, float green, float blue, float alpha, bool no_depth, float duration > 
+ 
+model_render 
+< void >  set_alpha  < float alpha > 
+< void >  set_color  < float red, float green, float blue > 
+< void >  override_material  < c_material* material > 
+< c_material* >  find_material  < std::string name > 
+< c_material* >  create_material  < std::string material_name, std::string material_type, std::string material_data > 
+< material_handle >  get_first_material 
+< material_handle >  get_next_material  < material_handle handle > 
+< material_handle >  is_invalid_material 
+< c_material* >  get_material  < material_handle handle > 
+< void >  override_matrix  < matrix3x4* matrix > 
+< void >  set_scroll_rate  < c_material* material, float speed > 
+< void >  set_scroll_angle  < c_material* material, float angle > 
+< float >  smooth_fade_alpha 
+< c_material* >  get_normal_material 
+< c_material* >  get_classic_material 
+< c_material* >  get_retro_material 
+< c_material* >  get_glass_material 
+< c_material* >  get_flat_material 
+< c_material* >  get_schleimi_material 
+< c_material* >  get_holo_material 
+< c_material* >  get_granite_material 
+< c_material* >  get_oldschool_material 
+< c_material* >  get_glow_material 
+< c_material* >  get_base_material 
+< c_material* >  get_ultimate_material 
+< c_material* >  get_animated_wireframe_material 
+< c_material* >  get_texture_1_material 
+< c_material* >  get_texture_2_material 
+< c_material* >  get_texture_3_material 
+< c_material* >  get_skybox_texture_1_material 
+< c_material* >  get_skybox_texture_2_material 
+< c_material* >  get_skybox_texture_3_material 
+ 
+clientstate 
+< int >  get_choked_ticks 
+< int >  get_client_tick 
+< int >  get_server_tick 
+< int >  get_delta_tick 
+< int >  get_last_command 
+ 
+http 
+< std::string >  get  < std::string url > 
+< std::string >  post  < std::string url, std::string body > 
+< std::string >  post_json  < std::string url, std::string body > 
+ 
+ragebot 
+< bool >  can_shoot 
+< bool >  is_charged 
+< bool >  is_fakeducking 
+< void >  set_allow_recharge  < bool allow > 
+< int >  get_missed_shots_resolver  < int index > 
+< int >  get_missed_shots_spread  < int index > 
+< c_vector3d >  get_quickpeek_origin 
+< void >  set_quickpeek_origin  < c_vector3d origin > 
+< void >  set_quickpeek  < bool active > 
+< void >  disable_resolver_logs  < bool active > 
+< int >  get_weapon_config 
+< void >  force_teleport 
+< bool >  tick_should_be_hidden 
+< int >  get_defensive_ticks_left 
+< int >  get_defensive_ticks_threshold 
+< void >  reset_defensive_ticks 
+ 
+antiaim 
+< void >  override_fake  < float angle > 
+< void >  override_desync  < float angle > 
+< void >  override_pitch  < float angle > 
+< void >  override_roll  < float angle > 
+< c_vector3d >  get_last_viewangles 
+< float >  get_last_desync 
+< float >  get_last_desync_amount 
+< float >  get_max_desync  < int index > 
+< manual_direction >  get_manual_direction 
+< bool >  did_send_packet_last_tick 
+ 
+input 
+< void >  is_cam_in_thirdperson 
+< c_vector3d >  get_camera_offset  < float x, float y, float z > 
+< void >  set_camera_offset 
+< void >  cam_to_firstperson 
+< void >  cam_to_thirdperson 
+< c_user_cmd* >  get_command  < int command_number > 
+ 
+netchannel 
+< std::string >  get_address 
+< bool >  is_local_server 
+< float >  get_latency_outgoing 
+< float >  get_latency_incoming 
+< float >  get_avg_latency_outgoing 
+< float >  get_avg_latency_incoming 
+< int >  outgoing_sequence_number 
+< int >  incoming_sequence_number 
+ 
+lua_editor 
+< int >  get_global_table_size 
+< int >  get_global_contents_size  < int index > 
+< std::string >  get_global_from_array  < int index, int contents_index > 
+< int >  get_class_table_size 
+< int >  get_class_contents_size  < int index > 
+< std::string >  get_class_from_array  < int index, int contents_index > 
+< int >  get_enum_table_size 
+< int >  get_enum_contents_size  < int index > 
+< std::string >  get_enum_from_array  < int index, int contents_index > 
+ 
+model_info 
+< int >  get_model_index  < std::string path > 
+< void >  precache_model  < std::string model name > 
+ 
+engine 
+< bool >  is_ingame 
+< bool >  is_connected 
+< c_client_entity* >  get_local_player 
+< c_client_entity* >  get_view_target 
+< int >  get_player_for_uid  < int userid > 
+< int >  get_max_players 
+< std::string >  get_map_name 
+< c_vector3d >  get_view_angles 
+< void >  set_view_angles  < float x, float y, float > 
+< player_info >  get_player_info  < int index > 
+< uint8_t* >  signature  < std::string module_name, std::string sig > 
+< void >  execute_console_command  < std::string text > 
+< void >  send_share_packet  < int packet_id, int value_1, int value_2, int value_3, int value_4 > 
+< bool >  is_newvision_server 
+ 
+entity_list 
+< c_client_entity* >  get_entity  < int index > 
+< c_client_entity* >  get_entity_from_handle  < c_base_handle handle > 
+< int >  get_max_entities 
+< int >  get_player_array_size 
+< c_client_entity* >  get_player_from_array  < int index > 
+< int >  get_weapon_array_size 
+< c_client_entity* >  get_weapon_from_array  < int index > 
+< int >  get_grenade_array_size 
+< c_client_entity* >  get_grenade_from_array  < int index > 
+< int >  get_chicken_array_size 
+< c_client_entity* >  get_chicken_from_array  < int index > 
+< int >  get_dz_item_array_size 
+< c_client_entity* >  get_dz_item_from_array  < int index > 
+< int >  get_bomb_array_size 
+< c_client_entity* >  get_bomb_from_array  < int index > 
+< int >  get_planted_bomb_array_size 
+< c_client_entity* >  get_planted_bomb_from_array  < int index > 
+< int >  get_smoke_array_size 
+< c_client_entity* >  get_smoke_from_array  < int index > 
+< int >  get_inferno_array_size 
+< c_client_entity* >  get_inferno_from_array  < int index > 
+ 
+global_vars 
+< float >  get_current_time 
+< float >  get_real_time 
+< float >  get_frame_time 
+< float >  get_interval_per_tick 
+< int >  get_tickcount 
+ 
+gamerules 
+< bool >  is_valve_server 
+< bool >  is_freeze_period 
+< bool >  is_bomb_planted 
+< bool >  is_bomb_dropped 
+< game_phase >  get_game_phase 
+ 
+rock_paper_scissors 
+< bool >  is_connected 
+< rps_result >  get_result - gets set on game ended 
+< rps_gamestate >  get_game_state 
+< rps_decision >  get_decision 
+< void >  set_decision  < rps_decision decision > 
+< int >  get_id 
+< bool >  did_send 
+< void >  send_decision 
+< void >  join_queue 
+< void >  stop_queue 
+< int >  get_enemy_id 
+< rps_decision >  get_enemy_decision 
+< std::string >  get_enemy_name 
+< float >  get_time_left 
+< float >  get_ended_time_left 
+< LPDIRECT3DTEXTURE9 >  get_rock_texture_32x28 
+< LPDIRECT3DTEXTURE9 >  get_rock_texture_256x216 
+< LPDIRECT3DTEXTURE9 >  get_paper_texture_32x34 
+< LPDIRECT3DTEXTURE9 >  get_paper_texture_256x276 
+< LPDIRECT3DTEXTURE9 >  get_scissor_texture_32x24 
+< LPDIRECT3DTEXTURE9 >  get_scissor_texture_256x193 
+ 
+quick_maths 
+< c_vector2d >  create_vector2d  < float x, float y > 
+< c_vector3d >  create_vector3d  < float x, float y, float z > 
+< c_vector4d >  create_vector4d  < float x, float y, float w, float h > 
+< c_color >  create_color  < float r, float g, float b, float a > 
+< c_vector3d >  vector_angles  < c_vector3d forward > 
+< c_vector3d >  calculate_angle  < c_vector3d from, c_vector3d to > 
+< float >  get_distance_2d  < c_vector2d from, c_vector2d to > 
+< float >  get_distance_3d  < c_vector3d start, c_vector3d end > 
+< float >  get_fov  < c_vector3d viewangles, c_vector3d start, c_vector3d end > 
+ 
+effects 
+< void >  draw_screen_effect  < c_material* material, float start_x, float start_y, float width, float height > 
+< void >  dispatch_effect  < std::string effect, float org_x, float org_y, float org_z > 
+< void >  dispatch_particle_effect  < std::string particle_effect, float org_x, float org_y, float org_z > 
+< void >  dispatch_tesla  < float org_x, float org_y, float org_z, float time, float radius, float beams, float width, std::string sprite_name, float red, float green, float blue > 
+< void >  dispatch_smoke  < float org_x, float org_y, float org_z, float scale, float framerate > 
+< void >  dispatch_sparks  < float org_x, float org_y, float org_z > 
+< void >  dispatch_dust  < float org_x, float org_y, float org_z, float size, float speed > 
+< void >  dispatch_muzzleflash  < float org_x, float org_y, float org_z, float scale, int type > 
+< void >  dispatch_metalsparks  < float org_x, float org_y, float org_z > 
+< void >  dispatch_energysplash  < float org_x, float org_y, float org_z, bool explosive > 
+< void >  dispatch_ricochet  < float org_x, float org_y, float org_z > 
+< void >  suppress_effects_sounds  < bool suppress > 
+< void >  draw_lights  < c_client_entity* entity, float red, float green, float blue, float alpha > 
+< void >  draw_beam  < float start_x, float start_y, float start_z, float end_x, float end_y, float end_z, std::string sprite, float time, float width, float amplitude, float speed, int segments, float red, float green, float blue, float alpha > 
+< void >  dispatch_player_taser  < c_cs_player* player, float start_x, float start_y, float start_z, float end_x, float end_y, float end_z > 
+< void >  dispatch_taser  < float start_x, float start_y, float start_z, float end_x, float end_y, float end_z > 
+ 
+panorama_engine 
+< c_panorama_panel* >  get_panel  < std::string name > 
+< void >  print_panels_to_console 
+< bool >  is_valid_panel  < c_panorama_panel* > 
+< void >  runscript  < c_panorama_panel* panel, std::string js_code, std::string path_to_xml > 
+ 
+gametypes 
+< int >  get_current_game_type 
+< int >  get_current_game_mode 
+ 
+hitscan 
+< void >  add_hitbox < hitbox hitbox > 
+< void >  remove_hitbox < hitbox hitbox > 
+< void >  clear 
+ 
+renderer 
+< void  >  draw_text  < float point_x, float point_y, std::string text, ImFont* font, float red, float green, float blue, float alpha, font_flags flags > 
+< void >  draw_text_clipped  < float point_x, float point_y, std::string text, ImFont* font, float red, float green, float blue, float alpha, font_flags flags, float clipped_x, float clipped_y, float clipped_h, float clipped_w > 
+< ImWchar* >  get_font_range  < font_range range > 
+< ImFont* >  add_font  < std::string name, std::string font_file, float size, bool bold, ImWchar* range > 
+< void >  add_merge_font  < std::string font_file, float size, bool bold, ImWchar* range > 
+< void >  build_fonts 
+< ImFont* >  find_font  < std::string name > 
+< ImFont* >  get_font  < fonts font > 
+< ImFont* >  create_font  < std::string name, std::string data, int size, bool bold, bool merge, float font_size, ImWchar* range > 
+< c_vector2d >  get_text_size  < std::string text, ImFont* font > 
+< void >  draw_player_profile_picture  < int index, float start_x, float start_y, float rounding, profile_picture_size size > 
+< c_vector2d >  get_world_to_screen  < float org_x, float org_y, float org_z > 
+< void >  draw_line  < float start_x, float start_y, float end_x, float end_y, float red, float green, float blue, float alpha, float thickness > 
+< void >  draw_thickline  < float start_x, float start_y, float end_x, float end_y, float red, float green, float blue, float alpha > 
+< void >  draw_line_multicolored  < float start_x, float start_y, float end_x, float end_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2 > 
+< void >  draw_rectangle  < float start_x, float start_y, float size_x, float size_y, float red, float green, float blue, float alpha, float rounding > 
+< void >  draw_rectangle_filled  < float start_x, float start_y, float size_x, float size_y, float red, float green, float blue, float alpha, float rounding > 
+< void >  draw_rectangle_multicolored  < float start_x, float start_y, float size_x, float size_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2, bool horizontal > 
+< void >  draw_rectangle_multicolored_4  < float start_x, float start_y, float size_x, float size_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2, float red_3, float green_3, float blue_3, float alpha_3, float red_4, float green_4, float blue_4, float alpha_4 > 
+< void >  draw_triangle  < float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float red, float green, float blue, float alpha > 
+< void >  draw_triangle_filled  < float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float red, float green, float blue, float alpha > 
+< void >  triangle_multicolored  < float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2, float red_3, float green_3, float blue_3, float alpha_3 > 
+< void >  triangle_multicolored_filled  < float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2, float red_3, float green_3, float blue_3, float alpha_3 > 
+< void >  draw_circle  < float p1_x, float p1_y, float size, float red, float green, float blue, float alpha, float segments, float thickness > 
+< void >  draw_circle_filled  < float p1_x, float p1_y, float size, float red, float green, float blue, float alpha, float segments > 
+< void >  draw_parallelogram  < float p1_x, float p1_y, float p2_x, float p2_y, float red, float green, float blue, float alpha, float thickness, float side, float radius > 
+< void >  draw_parallelogram_filled  < float p1_x, float p1_y, float p2_x, float p2_y, float red, float green, float blue, float alpha, float side, float radius > 
+< void >  draw_parallelogram_multicolored  < float p1_x, float p1_y, float p2_x, float p2_y, float red_1, float green_1, float blue_1, float alpha_1, float red_2, float green_2, float blue_2, float alpha_2, float thickness, float side, float radius > 
+< void >  draw_image  < LPDIRECT3DTEXTURE9 texture, float start_x, float start_y, float size_x, float size_y, float red, float green, float blue, float alpha, float rounding > 
+< void >  draw_image_ex  < LPDIRECT3DTEXTURE9 texture, float start_x, float start_y, float size_x, float size_y, float uv_min_x, float uv_min_y, float uv_max_x, float uv_max_y, float red, float green, float blue, float alpha, float rounding > 
+< LPDIRECT3DTEXTURE9 >  create_texture  < std::string data, int size > 
+< LPDIRECT3DTEXTURE9 >  get_texture  < textures texture > 
+< c_vector2d >  get_center 
+< float >  get_screen_width 
+< float >  get_screen_height 
+< void >  path_clear 
+< void >  path_add_line  < float point_x, float point_y > 
+< void >  path_fill  < float red, float green, float blue, float alpha > 
+< void >  path_stroke  < float red, float green, float blue, float alpha, path_flags flags, float thickness > 
+< void >  path_arc  < float p1_x, float p1_y, float size, float a_min, float a_max, int num_segments > 
+< void >  path_arc_fast  < float p1_x, float p1_y, float size, float a_min, float a_max > 
+< void >  path_bezier_cubic_curve  < float p1_x, float p1_y, float p2_x, float p2_y, float p3_x, float p3_y, int num´segment > 
+< void >  path_bezier_quadratic_curve  < float p1_x, float p1_y, float p2_x, float p2_y, int num segments > 
+< void >  path_rectangle  < float p1_x, float p1_y, float p2_x, float p2_y, float rounding, path_flags flags > 
+< void >  disable_scope_drawing  < bool set_value > 
+ 
+hooks 
+< void >  add_callback  < std::string hook_name, protected_function function > 
+< void >  add_lua_unload_callback  < protected_function function > 
+< void >  add_menu_callback  < std::string menu_item_name, protected_function function > 
+< void >  add_delayed_callback  < float delay, protected_function function > 
+< void >  add_voice_msg_callback  < int packet_id, protected_function function > - function( int sender_index, int value_1, int value_2, int value_3, int value_4 ) 
+hook list: 
+on_paint - paintraverse - every frame 
+on_draw - end_scene - every frame 
+< esp_player_info >  on_pre_draw_player_esp - end_scene - every frame for each player 
+< esp_player_info >  on_draw_player_esp - end_scene - every frame for each player 
+< esp_player_info >  on_post_draw_player_esp - end_scene - every frame for each player 
+< frame_stage >  on_frame_stage_notify - frame_stage_notify - every frame 
+on_level_clear - on_level_init_pre_entity 
+on_delayed_loop - runs every 500ms 
+< c_game_event* >  on_event - game events - on event 
+< lua_dme, original >  on_drawmodel - draw model execute - on drawing model 
+< int message_type, bf_read message >  on_dispatch_user_message - dispatch user message - on dispatch 
+< std::string text >  on_console_input - clientcmd_unrestricted - on dispatching console commands 
+< c_user_cmd* >  on_createmove - createmove - start of createmove 
+< c_user_cmd* >  on_createmove_pre_antiaim - createmove - before antiaim 
+< c_view_setup* >  on_override_view - override view - every frame 
+< c_view_setup* >  on_render_view - render view - every frame 
+< lua_shot_info >  on_shot_info - createmove - on ragebot shot 
+< lua_hitscan >  on_hitscan - createmove - on ragebot hitbox selection 
+< lua_multipoints >  on_multipoints - createmove - on ragebot multipoint setup 
+< lua_at_targets >  on_at_targets - createmove - on at targets selection 
+< float x, float y, float z, float curtime >  on_report_hit - fires when local hits someone 
+< int target index, c_vector3d angle_delta, float smoothing, bool skip_cheat_smoothing, bool should_return >  on_legit_aimbot_smoothing - right before the smoothing kicks in 
+< std::string item_name >  on_menu_callback  - on menu item interaction - every menu item 
+on_rps_queue_joined 
+on_rps_queue_stopped 
+< lua_rps_match_started >  on_rps_match_started 
+< lua_rps_game_ended >  on_rps_game_ended 
+on_rps_reset 
+ 
+ 
+Classes And Structs 
+ 
+lua_shot_info 
+< c_vector3d >  get_start 
+< c_vector3d >  get_end 
+< c_client_entity* >  get_target 
+< float >  get_damage 
+< float >  get_damage_override 
+< int >  get_backtrack 
+< hitbox >  get_hitbox 
+ 
+lua_hitscan 
+< c_client_entity* >  get_player 
+< bool >  should_override 
+ 
+lua_multipoints 
+< c_client_entity* >  get_player 
+< hitbox >  hitbox 
+< bool >  should_multipoint_hitbox 
+< bool >  should_override 
+ 
+lua_at_targets 
+< c_cs_player* >  player 
+< bool >  should_override 
+ 
+c_user_cmd 
+< int >  get_command_number 
+< int >  get_tick_count 
+< c_vector3d >  get_viewangles 
+< float >  get_forwardmove 
+< float >  get_sidemove 
+< float >  get_upmove 
+< buttons >  get_buttons 
+< void >  add_button  < buttons button > 
+< void >  remove_button  < buttons button > 
+< bool >  is_button_active  < buttons button > 
+< int >  get_weaponselect 
+< int >  get_weaponsubtype 
+< int >  get_mousedx 
+< int >  get_mousedy 
+ 
+lua_dme 
+< c_client_entity* >  get_entity 
+< std::string >  get_model_name 
+< bool >  should_override 
+< matrix3x4* >  get_matrix 
+ 
+c_view_setup 
+< c_vector3d >  get_origin 
+< c_vector3d >  get_angles 
+< float >  get_fov 
+< float >  get_fov_viewmodel 
+ 
+c_game_event 
+< std::string >  get_name 
+< bool >  get_bool  < std::string name > 
+< int >  get_int  < std::string name > 
+< float >  get_float  < std::string name > 
+< std::string >  get_string  < std::string name > 
+< void >  set_bool  < std::string name, bool value > 
+< void >  set_int  < std::string name, int value > 
+< void >  set_float  < std::string name, float value > 
+< void >  set_string  < std::string name, std::string value > 
+ 
+c_material 
+< std::string >  get_name 
+< void >  set_flag  < material_flags material var flags, bool active > 
+< void >  increment_referencecount 
+< void >  refresh 
+< bool >  is_error_material 
+< void >  modulate  < c_color color > 
+< void >  set_alpha  < float alpha > 
+< c_material_var* >  find_var  < std::string name > 
+ 
+c_material_var 
+< void >  set_float  < float value > 
+< void >  set_int  < int value > 
+< void >  set_string  < std::string value > 
+< void >  set_vector3d  < float x, float y, float z > 
+ 
+convar 
+< float >  get_float 
+< int >  get_int 
+< std::string >  get_string 
+< void >  set_float  < float value > 
+< void >  set_int  < int value > 
+< void >  set_string  < std::string value > 
+< void >  add_flag  < convar_flags flag > 
+< void >  remove_flag  < convar_flags flag > 
+< bool >  has_flag  < convar_flags flag > 
+< int >  callbacks_amount 
+ 
+cfg_checkbox 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< int* >  value 
+< bool >  get 
+ 
+cfg_slider 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< float* >  value 
+< float >  get 
+< void >  set  < float new_value > 
+< float >  min_value 
+< float >  max_value 
+< std::string >  get_format 
+< void >  set_format  < std::string > 
+< int >  get_int 
+ 
+cfg_combo 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< int* >  value 
+< int >  get 
+< int >  get_position  < std::string item_name > 
+< void >  set  < int new_value > 
+< void >  add_item  < std::string item_name > 
+< void >  remove_item  < std::string item_name > 
+< int >  get_items 
+< void >  set_items  < std::string new_items > 
+ 
+cfg_multiselect 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< int* >  value 
+< bool >  get  < int slot > 
+< int >  get_slot  < std::string item_name > 
+< void >  set  < int new_value > 
+< void >  add_item  < std::string item_name > 
+< void >  remove_item  < std::string item_name > 
+< int >  get_items 
+< void >  set_items  < std::string new_items > 
+ 
+cfg_colorpicker 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< c_color >  get 
+< void >  set  < int red, int green, int blue, int alpha > 
+< bool* >  alpha 
+ 
+cfg_textinput 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< std::string >  get 
+< void >  set  < std::string new_text > 
+< std::string >  get_hint 
+< void >  set_hint  < std::string new_hint > 
+ 
+cfg_keybind 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< bool >  get 
+< bool >  is_button_active 
+< bool >  has_key 
+< int >  get_button 
+< void >  set_button  < int new_button > 
+< int >  get_mode 
+< void >  set_mode  < int new_mode > 
+< int >  get_options 
+< void >  set_options  < int new_option > 
+ 
+cfg_button 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< bool* >  show_as_active 
+< std::string >  get_hovered_text 
+< void >  set_hovered_text  < std::string new_hovered_text > 
+< std::string >  get_pressed_text 
+< void >  set_pressed_text  < std::string new_pressed_text > 
+ 
+cfg_text 
+< std::string >  get_name 
+< std::string >  get_flexname 
+< void >  set_flexname  < std::string new_flexname > 
+< std::string >  get_description 
+< void >  set_description  < std::string new_description > 
+< void >  set_visible 
+< void >  set_invisible 
+< void >  toggle_visibility 
+< std::string >  get_override_text 
+< void >  set_override_text  < std::string new_override_text > 
+ 
+bf_read 
+< void >  set_offset  < int offset > 
+< void >  skip  < int length > 
+< int >  read_int 
+< bool>  read_bool 
+< std::string >  read_string 
+ 
+autowall 
+< bool >  is_visible 
+< float >  get_damage 
+ 
+c_panorama_panel 
+< std::string >  get_name 
+< void >  set_visible  < bool > 
+< bool >  is_visible 
+< bool >  is_transparent 
+< c_panorama_panel* >  find_child_traverse  < std::string name > 
+ 
+lua_rps_match_started 
+< std::string >  player_name_1 
+< int >  player_id_1 - player id 1 is the first person in the queue. 
+< std::string >  player_name_2  
+< int >  player_id_2 - player ids are NOT uids! 
+ 
+lua_rps_game_ended 
+< std::string >  player_name_1 
+< int >  player_id_1 - player id 1 is the first person in the queue. 
+< rps_decision >  decision_1 
+< std::string >  player_name_2 
+< int >  player_id_2 - player ids are NOT uids! 
+< rps_decision >  decision_2 
+< int >  winner_id - if its a tie then winner id returns 0. 
+< bool >  is_local_game - check if the finished game contains our localplayer 
+ 
+weapon_data 
+< int >  max_clip1 
+< int >  max_clip2 
+< int >  default_clip1 
+< int >  default_clip2 
+< int >  weapon_type 
+< int >  weapon_price 
+< int >  kill_award 
+< bool >  full_auto 
+< int >  damage 
+< int >  headshot_multiplier 
+< float >  armor_ratio 
+< int >  bullets 
+< float >  penetration 
+< float >  range 
+< float >  range_modifier 
+< float >  throw_velocity 
+ 
+c_client_entity 
+< int >  get_netvar_int  < std::string var > 
+< float >  get_netvar_float  < std::string var > 
+< bool >  get_netvar_bool  < std::string var > 
+< std::string >  get_netvar_string  < std::string var > 
+< c_vector3d >  get_netvar_c_vector3d  < std::string var > 
+< c_base_handle >  get_netvar_handle  < std::string var > 
+< void >  set_netvar_int  < std::string var, int value > 
+< void >  set_netvar_float  < std::string var, float value > 
+< void >  set_netvar_bool  < std::string var, bool value > 
+< void >  set_netvar_string  < std::string var, std::string value > 
+< void >  set_netvar_c_vector3d  < std::string var, c_vector3d value > 
+< bool >  is_dormant 
+< int >  get_class_id 
+< std::string >  get_class_name 
+< bool >  is_player 
+< bool >  is_weapon 
+< c_vector3d >  get_render_origin 
+< int >  get_index 
+ 
+c_base_combat_weapon 
+< bool >  is_sniper 
+< bool >  is_grenade 
+< bool >  is_knife 
+< bool >  is_secondary_weapon 
+< bool >  is_primary_weapon 
+< float >  get_spread 
+< float >  get_inaccuracy 
+< int >  get_ammo 
+< int >  get_backpack_ammo 
+< int >  get_max_ammo 
+< int >  get_max_backpack_ammo 
+< int >  get_zoom_level 
+< bool >  get_pin_pulled 
+< float >  get_throw_time 
+< bool >  is_in_burst 
+< bool >  get_in_reload 
+< float >  get_max_speed 
+< weapon_data >  get_weapon_data 
+ 
+c_base_attributable_item 
+< int >  get_fallback_stattrak 
+< std::string >  get_custom_name 
+< float >  get_fallback_wear 
+< int >  get_fallback_seed 
+< int >  get_paint_kit 
+< int >  get_item_definition 
+< int >  get_entity_quality 
+< int >  get_item_id_high 
+< int >  get_account_id 
+< int >  get_original_owner_xuidlow 
+< int >  get_original_owner_xuidhigh 
+ 
+c_cs_player 
+< bool >  is_enemy 
+< bool >  is_alive 
+< c_vector3d >  get_abs_origin 
+< c_vector3d >  get_abs_angles 
+< c_client_entity* >  get_active_weapon 
+< c_client_entity* >  get_inventory_weapon  < int index > 
+< int >  get_armor 
+< bool >  get_defusing 
+< float >  get_duck_amount 
+< float >  get_duck_speed 
+< bool >  get_flag  < player_flags flag > 
+< int >  get_health 
+< bool >  has_defuser 
+< bool >  is_scoped 
+< bool >  has_helmet 
+< bool >  has_heavy_armor 
+< float >  get_pose_parameter  < poses parameter > 
+< float >  set_pose_parameter  < poses parameter, float value > 
+< c_vector3d >  get_velocity 
+< std::string >  get_place_name 
+ 
+c_base_entity 
+< bool >  get_move_type  < move_types type > 
+< int >  get_team 
+< c_vector3d >  get_origin 
+< c_vector3d >  get_mins 
+< c_vector3d >  get_maxs 
+< int >  get_model_index 
+< void >  set_model_index  < int index > 
+< studiohdr* >  get_studio_model 
+< matrix3x4 >  get_matrix 
+< void >  draw_hitboxes  < matrix3x4* matrix, float time, float red, float green, float blue, float alpha > 
+< c_vector3d >  get_abs_velocity 
+< bool >  is_breakable 
+ 
+esp_player_info 
+< int >  get_index 
+< matrix3x4* >  get_matrix 
+< c_vector3d >  get_origin 
+< c_vector3d >  get_angles 
+< float >  get_duck_amount 
+< float >  get_spawn_time 
+< int >  get_health 
+< std::string >  get_last_place_name 
+< c_vector3d >  get_head_position 
+< float >  get_distance 
+< int >  get_squad_id 
+< float >  get_time_since_dormant 
+< int >  get_dormant_alpha 
+< bool >  is_enemy 
+< bool >  is_on_ground 
+< bool >  is_fakeducking 
+< bool >  is_scoped 
+< bool >  is_legit 
+< bool >  is_slowwalking 
+< bool >  is_defusing 
+< bool >  has_helmet 
+< bool >  has_kevlar 
+< bool >  is_r7_user 
+< bool >  uses_shared_esp 
+< bool >  is_steam_friend 
+< bool >  is_visible 
+< c_vector2d >  get_bb_start 
+< c_vector2d >  get_bb_size 
+ 
+studiohdr 
+< mstudiobone_t* >  get_bone 
+< int >  get_number_of_bones 
+< int >  get_bone_index 
+ 
+mstudiobone_t 
+< bool >  has_parent 
+< std::string >  get_name 
+< c_vector3d >  get_position 
+< int >  get_parent 
+< int >  get_flags 
+ 
+game_trace 
+< bool >  did_hit 
+< bool >  did_hit_world 
+< bool >  did_hit_non_world_entity 
+< float >  get_fraction 
+< int >  get_hitgroup 
+< c_client_entity* >  get_entity 
+< hitbox >  get_hitbox 
+ 
+matrix3x4 
+< bool >  get_matrix_value  < int first_row, int second_row > 
+< void >  set_matrix_value  < int first_row, int second_row, float value > 
+< void >  set_origin  < c_vector3d > 
+< c_vector3d >  get_origin 
+ 
+player_info 
+< int >  steamid 
+< bool >  is_fakeplayer 
+< bool >  is_hltv 
+< std::string >  name 
+< int > userid 
+ 
+c_vector2d 
+< float >  x 
+< float >  y 
+< float >  get_length 
+< float >  get_length_sqr 
+< bool >  is_valid 
+ 
+c_vector3d 
+< float >  x 
+< float >  y 
+< float >  z 
+< float >  get_length 
+< float >  get_length_sqr 
+< float >  get_length2d 
+< bool >  is_valid 
+< void >  normalize 
+ 
+c_vector4d 
+< float >  x 
+< float >  y 
+< float >  w 
+< float >  h 
+ 
+c_color 
+< float >  r 
+< float >  g 
+< float >  b 
+< float >  a 
+ 
+ 
+Enums 
+ 
+material_flags 
+material_var_debug 
+material_var_no_debug_override 
+material_var_no_draw 
+material_var_use_in_fillrate_mode 
+material_var_vertexcolor 
+material_var_vertexalpha 
+material_var_selfillum 
+material_var_additive 
+material_var_alphatest 
+material_var_znearer 
+material_var_model 
+material_var_flat 
+material_var_nocull 
+material_var_nofog 
+material_var_ignorez 
+material_var_decal 
+material_var_envmapsphere 
+material_var_envmapcameraspace 
+material_var_basealphaenvmapmask 
+material_var_translucent 
+material_var_normalmapalphaenvmapmask 
+material_var_needs_software_skinning 
+material_var_opaquetexture 
+material_var_envmapmode 
+material_var_suppress_decals 
+material_var_halflambert 
+material_var_wireframe 
+material_var_allowalphatocoverage 
+material_var_alpha_modified_by_proxy 
+material_var_vertexfog 
+ 
+sounds 
+cod 
+ut 
+quake 
+roblox 
+uff 
+laser 
+brr 
+bonk 
+smash 
+simon_says_yes 
+simon_says_no 
+simon_says_success 
+ 
+path_flags 
+closed 
+round_top_left 
+round_top_right 
+round_bottom_left 
+round_bottom_right 
+rounded 
+ 
+fonts 
+default 
+tahoma_12_bold 
+tahoma_11_bold 
+profont_12_bold 
+profont_13_bold 
+profont_12 
+profont_13 
+profont_15 
+ 
+font_ranges 
+max 
+default 
+korean 
+chinese_full 
+chinese_sc 
+japanese 
+cyrillic 
+thai 
+vietnamese 
+ 
+font_flags 
+centered_x 
+centered_y 
+centered 
+right_aligned 
+drop_shadow 
+outline 
+ 
+game_phase 
+gamephase_warmup_round 
+gamephase_playing_standard 
+gamephase_playing_first_half 
+gamephase_playing_second_half 
+gamephase_halftime 
+gamephase_match_ended 
+gamephase_max 
+ 
+poses 
+strafe_yaw 
+stand 
+lean_yaw 
+speed 
+ladder_yaw 
+ladder_speed 
+jump_fall 
+move_yaw 
+move_blend_crouch 
+move_blend_walk 
+move_blend_run 
+body_yaw 
+body_pitch 
+aim_blend_stand_idle 
+aim_blend_stand_walk 
+aim_blend_stand_run 
+aim_blend_crouch_idle 
+aim_blend_crouch_walk 
+death_yaw 
+ 
+hitbox 
+head 
+lower_neck 
+pelvis 
+stomach 
+lower_chest 
+chest 
+upper_chest 
+left_thigh 
+right_thigh 
+left_calf 
+right_calf 
+left_foot 
+right_foot 
+left_hand 
+right_hand 
+left_upper_arm 
+left_forearm 
+right_upper_arm 
+right_forearm 
+max 
+ 
+trace_mask 
+mask_all 
+mask_solid 
+mask_playersolid 
+mask_npcsolid 
+mask_npcfluid 
+mask_water 
+mask_opaque 
+mask_opaque_and_npcs 
+mask_blocklos 
+mask_blocklos_and_npcs 
+mask_visible 
+mask_visible_and_npcs 
+mask_shot 
+mask_shot_brushonly 
+mask_shot_hull 
+mask_shot_player 
+mask_shot_portal 
+mask_solid_brushonly 
+mask_playersolid_brushonly 
+mask_npcsolid_brushonly 
+mask_npcworldstatic 
+mask_npcworldstatic_fluid 
+mask_splitareaportal 
+mask_current 
+mask_deadsolid 
+ 
+player_flags 
+on_ground 
+ducking 
+animducking 
+waterjump 
+ontrain 
+inrain 
+frozen 
+atcontrols 
+client 
+fakeclient 
+in_water 
+fly 
+conveyor 
+npc 
+godmode 
+notarget 
+aimtarget 
+partial_ground 
+staticprop 
+graphed 
+grenade 
+stepmovement 
+donttouch 
+basevelocity 
+worldbrush 
+object 
+killme 
+onfire 
+dissolving 
+transragdoll 
+unblockable_by_player 
+ 
+move_types 
+none 
+isometric 
+walk 
+step 
+fly 
+flygravity 
+vphysics 
+push 
+noclip 
+ladder 
+observer 
+custom 
+ 
+buttons 
+attack 
+jump 
+duck 
+forward 
+back 
+use 
+cancel 
+left 
+right 
+move_left 
+move_right 
+attack2 
+run 
+reload 
+alt1 
+alt2 
+score 
+speed 
+walk 
+zoom 
+weapon1 
+weapon2 
+bull_rush 
+grenade1 
+grenade2 
+ 
+convar_flags 
+unregistered 
+developmentonly 
+gamedll 
+clientdll 
+hidden 
+protected 
+sponly 
+archive 
+notify 
+userinfo 
+printableonly 
+gamedll_for_remote_clients 
+unlogged 
+never_as_string 
+replicated 
+cheat 
+ss 
+demo 
+dontrecord 
+ss_added 
+release 
+reload_materials 
+reload_textures 
+not_connected 
+material_system_thread 
+archive_gameconsole 
+server_can_execute 
+server_cannot_query 
+clientcmd_can_execute 
+accessible_from_threads 
+material_thread_mask 
+ 
+manual_direction 
+none 
+left 
+back 
+right 
+ 
+rps_result 
+won 
+lost 
+tie 
+ 
+rps_gamestate 
+normal 
+in_queue 
+in_game 
+game_ended 
+ 
+rps_decision 
+none 
+rock 
+paper 
+scissors 
+ 
+textures 
+ct_icon_16x16 
+ct_icon_32x32 
+t_icon_16x16 
+t_icon_32x32 
+logo 
+logo200x200 
+scumbucket 
+ 
+profile_picture_size 
+small 
+medium 
+large 
+ 
+frame_stage 
+frame_undefined 
+frame_start 
+frame_net_update_start 
+frame_net_update_postdataupdate_start 
+frame_net_update_postdataupdate_end 
+frame_net_update_end 
+frame_render_start 
+frame_render_end 
+ 
+config_type 
+checkbox 
+slider 
+combo 
+multiselect 
+colorpicker 
+textinput 
+keybind 
+button 
+text 
+unknown 
